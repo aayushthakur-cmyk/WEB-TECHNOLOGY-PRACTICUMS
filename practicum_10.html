@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Medicine Inventory</title>
+    <link rel="stylesheet" href="style_8.css">
+    <link rel="stylesheet" href="style_10.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>PharmaCare</h1>
+        <p>Providing quality medicines for a healthier life.</p>
+    </header>
+
+    <nav class="site-nav">
+        <a href="#inventory">Inventory</a>
+        <a href="#add-section">Add medicine</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+
+        <section id="summary" class="summary">
+            <div class="stat">
+                <span class="stat-label">Medicines listed</span>
+                <span class="stat-value" id="total-items">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Units in stock</span>
+                <span class="stat-value" id="total-units">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Low stock</span>
+                <span class="stat-value" id="low-items">0</span>
+            </div>
+        </section>
+
+        <div class="workspace">
+
+            <section id="add-section" class="panel">
+                <h2 id="form-title">Add a medicine</h2>
+                <p class="hint">Fill in the details and select Add medicine. The list updates right away.</p>
+
+                <div class="field">
+                    <label for="med-name">Medicine name</label>
+                    <input type="text" id="med-name" placeholder="e.g. Paracetamol 500 mg">
+                </div>
+                <div class="field">
+                    <label for="med-category">Category</label>
+                    <input type="text" id="med-category" placeholder="e.g. Tablets and Capsules">
+                </div>
+                <div class="field">
+                    <label for="med-qty">Quantity in stock</label>
+                    <input type="number" id="med-qty" min="0" placeholder="e.g. 120">
+                </div>
+
+                <p id="form-message" class="message"></p>
+
+                <div class="button-row">
+                    <button class="btn" id="save-btn">Add medicine</button>
+                    <button class="btn btn-ghost" id="cancel-btn">Cancel edit</button>
+                </div>
+            </section>
+
+            <section id="inventory" class="panel">
+                <h2>Medicine inventory</h2>
+                <div class="field">
+                    <label for="search-box">Search medicines</label>
+                    <input type="text" id="search-box" placeholder="Type a name or category">
+                </div>
+                <ul id="med-list" class="med-list"></ul>
+                <button class="btn btn-danger" id="clear-btn">Remove all</button>
+            </section>
+
+        </div>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@pharmacare.example</p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+    <script src="script_10.js"></script>
+</body>
+</html>

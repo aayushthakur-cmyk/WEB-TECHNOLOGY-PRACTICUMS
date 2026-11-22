@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Settings Toggle Switches</title>
+    <link rel="stylesheet" href="style_15.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>PharmaCare</h1>
+        <p>Pharmacy dashboard settings</p>
+    </header>
+
+    <main class="container">
+
+        <div class="layout">
+
+            <section class="panel">
+                <h2>Settings</h2>
+                <p class="hint">Turn each switch on or off. Your choices are saved in this browser.</p>
+
+                <div class="setting">
+                    <div class="setting-text">
+                        <p class="setting-name">Dark mode</p>
+                        <p class="setting-desc">Use a dark theme that is easier on the eyes at night.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-toggle" aria-label="Dark mode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting">
+                    <div class="setting-text">
+                        <p class="setting-name">Low stock alerts</p>
+                        <p class="setting-desc">Highlight medicines that are running low.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="alert-toggle" aria-label="Low stock alerts">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting">
+                    <div class="setting-text">
+                        <p class="setting-name">Show prices</p>
+                        <p class="setting-desc">Display the price of each medicine.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="price-toggle" aria-label="Show prices">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting">
+                    <div class="setting-text">
+                        <p class="setting-name">Large text</p>
+                        <p class="setting-desc">Make text bigger for easier reading.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="text-toggle" aria-label="Large text">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button class="btn" id="reset-btn">Reset to defaults</button>
+            </section>
+
+            <section class="panel">
+                <h2>Medicine stock</h2>
+                <div id="reminder" class="reminder">Remember to check expiry dates this week.</div>
+                <ul class="stock-list">
+                    <li class="stock-item" data-qty="120">
+                        <span class="med-name">Paracetamol 500 mg</span>
+                        <span class="med-qty">120 in stock</span>
+                        <span class="med-price">&#8377;25</span>
+                    </li>
+                    <li class="stock-item" data-qty="6">
+                        <span class="med-name">Vitamin D3</span>
+                        <span class="med-qty">6 in stock</span>
+                        <span class="med-price">&#8377;70</span>
+                    </li>
+                    <li class="stock-item" data-qty="48">
+                        <span class="med-name">Cetirizine 10 mg</span>
+                        <span class="med-qty">48 in stock</span>
+                        <span class="med-price">&#8377;35</span>
+                    </li>
+                    <li class="stock-item" data-qty="4">
+                        <span class="med-name">Amoxicillin 250 mg</span>
+                        <span class="med-qty">4 in stock</span>
+                        <span class="med-price">&#8377;90</span>
+                    </li>
+                </ul>
+                <p class="status" id="status"></p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+    <script src="script_15.js"></script>
+</body>
+</html>

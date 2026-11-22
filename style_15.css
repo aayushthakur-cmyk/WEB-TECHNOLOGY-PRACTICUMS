@@ -1,0 +1,96 @@
+/* PRACTICUM 15 - Custom toggle switches */
+* { box-sizing: border-box; }
+
+body {
+    --bg: #eef4f7; --card: #ffffff; --text: #2d3748; --muted: #4a5568;
+    --border: #d5e2e8; --brand: #0b6e75; --brand-dark: #084c52; --row: #f6fafb;
+    margin: 0; font-family: "Segoe UI", Arial, sans-serif; font-size: 16px; line-height: 1.6;
+    color: var(--text); background-color: var(--bg);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+body.dark {
+    --bg: #12202a; --card: #1b2e3a; --text: #e6eef2; --muted: #a9bcc6;
+    --border: #2f4756; --brand: #3bb6bd; --brand-dark: #0b6e75; --row: #213746;
+}
+body.large-text { font-size: 20px; }
+
+.site-header { background-color: #0b6e75; color: #ffffff; text-align: center; padding: 40px 20px; }
+.site-header h1 { margin: 0 0 6px 0; font-size: 2.2em; }
+.site-header p { margin: 0; font-size: 1.1em; }
+.site-footer { background-color: #084c52; color: #ffffff; text-align: center; padding: 18px; }
+.site-footer p { margin: 0; }
+
+.container { width: 94%; max-width: 1050px; margin: 30px auto; }
+.layout { display: flex; align-items: flex-start; gap: 25px; }
+.layout .panel { flex: 1; }
+.panel { background-color: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 25px; transition: background-color 0.4s ease, border-color 0.4s ease; }
+h2 { margin: 0 0 8px 0; font-size: 1.6em; color: var(--brand); }
+.hint { margin: 0 0 18px 0; color: var(--muted); font-size: 0.9em; }
+
+/* Setting rows */
+.setting { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid var(--border); border-radius: 8px; background-color: var(--row); transition: background-color 0.4s ease; }
+.setting-name { margin: 0; font-weight: 700; }
+.setting-desc { margin: 0; font-size: 0.88em; color: var(--muted); }
+
+/* ===== Custom toggle switch ===== */
+.switch { position: relative; display: inline-block; flex-shrink: 0; width: 56px; height: 30px; }
+
+/* The real checkbox stays for accessibility; it is drawn as the track */
+.switch input {
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 30px;
+    margin: 0;
+    border-radius: 30px;
+    background: #a0aec0;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.switch input:checked { background: #0b6e75; }
+.switch input:focus-visible { outline: 3px solid #f2a900; outline-offset: 3px; }
+.switch input:hover { box-shadow: 0 0 0 4px rgba(11, 110, 117, 0.18); }
+
+/* The sliding knob */
+.slider { position: absolute; top: 0; left: 0; width: 56px; height: 30px; pointer-events: none; }
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+.switch input:checked + .slider::before { transform: translateX(26px); }
+
+.btn { margin-top: 6px; padding: 10px 20px; border: 1px solid var(--brand); border-radius: 5px; background-color: var(--brand); color: #ffffff; font-family: inherit; font-size: 0.95em; font-weight: 600; cursor: pointer; transition: transform 0.2s ease, background-color 0.2s ease; }
+.btn:hover { background-color: var(--brand-dark); transform: translateY(-2px); }
+.btn:focus-visible { outline: 3px solid #f2a900; outline-offset: 2px; }
+
+/* Stock list: behaviour changes with the toggles */
+.stock-list { list-style: none; margin: 0; padding: 0; }
+.stock-item { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; padding: 12px 14px; margin-bottom: 10px; border: 1px solid var(--border); border-left: 5px solid var(--brand); border-radius: 6px; transition: background-color 0.3s ease, border-color 0.3s ease; }
+.med-name { font-weight: 600; }
+.med-qty { color: var(--muted); font-size: 0.9em; }
+.med-price { font-weight: 700; color: var(--brand); transition: opacity 0.3s ease; }
+body.hide-prices .med-price { display: none; }
+body.hide-prices .stock-item { grid-template-columns: 1fr auto; }
+
+.stock-item.low { background-color: rgba(180, 35, 24, 0.12); border-left-color: #b42318; }
+.stock-item.low .med-qty { color: #b42318; font-weight: 700; }
+body.dark .stock-item.low .med-qty { color: #ff8a80; }
+
+.reminder { margin-bottom: 14px; padding: 12px 14px; border-radius: 6px; background-color: #fff1cc; color: #6b4a00; border-left: 5px solid #f2a900; transition: opacity 0.3s ease; }
+body.hide-alerts .reminder { display: none; }
+
+.status { margin: 14px 0 0 0; font-size: 0.9em; color: var(--muted); min-height: 24px; }
+
+@media (max-width: 992px) { .layout { flex-direction: column; } .layout .panel { width: 100%; } }
+@media (max-width: 576px) { .setting { padding: 12px; } .stock-item { grid-template-columns: 1fr auto; } .med-qty { grid-column: 1; } }

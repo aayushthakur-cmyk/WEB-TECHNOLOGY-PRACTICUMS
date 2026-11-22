@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Product Explorer</title>
+    <link rel="stylesheet" href="style_14.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>PharmaCare</h1>
+        <p>Find, filter and compare our products.</p>
+    </header>
+
+    <nav class="site-nav">
+        <a href="#explorer">Product explorer</a>
+        <a href="#compare">Compare</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <main class="container">
+
+        <section id="explorer" class="panel">
+            <h2>Product explorer</h2>
+
+            <div class="controls">
+                <div class="field">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" placeholder="Type a product name or use">
+                </div>
+                <div class="field">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="all">All categories</option>
+                        <option value="Tablets and Capsules">Tablets and Capsules</option>
+                        <option value="Vitamins and Supplements">Vitamins and Supplements</option>
+                        <option value="Healthcare Products">Healthcare Products</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="type">Availability</label>
+                    <select id="type">
+                        <option value="all">All products</option>
+                        <option value="OTC">Over the counter</option>
+                        <option value="Prescription">Prescription only</option>
+                    </select>
+                </div>
+                <button class="btn btn-ghost" id="reset-filters">Reset</button>
+            </div>
+
+            <p class="result-count" id="result-count"></p>
+            <div class="product-grid" id="product-grid"></div>
+        </section>
+
+        <section id="compare" class="panel">
+            <h2>Compare products</h2>
+            <p class="hint" id="compare-hint">Select the "Compare" button on any two products.</p>
+            <div class="compare-table" id="compare-table"></div>
+            <button class="btn btn-ghost" id="clear-compare">Clear comparison</button>
+        </section>
+
+        <section id="faq" class="panel">
+            <h2>Frequently asked questions</h2>
+            <details>
+                <summary>Do I need a prescription for every product?</summary>
+                <p>No. Over-the-counter products can be bought freely. Prescription-only items need a valid prescription from a doctor.</p>
+            </details>
+            <details>
+                <summary>How are PharmaCare products tested?</summary>
+                <p>Raw materials are inspected, each batch is tested for quality, and a final check is done before release.</p>
+            </details>
+            <details>
+                <summary>How should I store my medicines?</summary>
+                <p>Keep them in a cool, dry place away from sunlight and out of reach of children. Always check the expiry date.</p>
+            </details>
+        </section>
+
+    </main>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+    <script src="script_14.js"></script>
+</body>
+</html>

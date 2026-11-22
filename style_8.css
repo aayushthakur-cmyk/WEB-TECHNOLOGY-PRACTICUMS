@@ -1,0 +1,271 @@
+/* =====================================================
+   DESKTOP (default styles, screens above 992px)
+   ===================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #eef4f7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Header */
+.site-header {
+    background-color: #0b6e75;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.site-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 44px;
+}
+
+.site-header p {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Navigation */
+.site-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: #084c52;
+    padding: 10px;
+}
+
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 5px;
+}
+
+.site-nav a:hover {
+    background-color: #f2a900;
+    color: #1a202c;
+}
+
+/* Layout */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 30px;
+    color: #0b6e75;
+}
+
+h3 {
+    margin: 12px 0 6px 0;
+    font-size: 20px;
+    color: #084c52;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Hero and split sections: text and image side by side */
+.hero,
+.split {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #ffffff;
+    border: 1px solid #d5e2e8;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.hero-text,
+.split-text {
+    flex: 1;
+}
+
+.hero img,
+.split img {
+    flex: 1;
+    width: 50%;
+}
+
+/* Card grid: 3 columns on desktop */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.card,
+.step {
+    background-color: #ffffff;
+    border: 1px solid #d5e2e8;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #cbd9df;
+}
+
+.card:hover,
+.step:hover {
+    border-color: #0b6e75;
+}
+
+.step {
+    border-top: 5px solid #0b6e75;
+}
+
+.step p,
+.card p {
+    margin: 0;
+}
+
+/* Contact */
+.contact {
+    background-color: #0b6e75;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.contact h2 {
+    color: #ffffff;
+}
+
+.contact p {
+    margin: 0;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #084c52;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* =====================================================
+   TABLET (screens up to 992px)
+   ===================================================== */
+@media (max-width: 992px) {
+    .site-header {
+        padding: 40px 20px;
+    }
+
+    .site-header h1 {
+        font-size: 36px;
+    }
+
+    .site-header p {
+        font-size: 18px;
+    }
+
+    .site-nav {
+        flex-wrap: wrap;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .hero,
+    .split {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    /* 2 columns on tablet */
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================================
+   MOBILE (screens up to 576px)
+   ===================================================== */
+@media (max-width: 576px) {
+    body {
+        font-size: 15px;
+    }
+
+    .site-header {
+        padding: 30px 15px;
+    }
+
+    .site-header h1 {
+        font-size: 28px;
+    }
+
+    .site-header p {
+        font-size: 16px;
+    }
+
+    /* Navigation stacks vertically */
+    .site-nav {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .site-nav a {
+        text-align: center;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Text and image stack vertically */
+    .hero,
+    .split {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .hero img,
+    .split img {
+        width: 100%;
+    }
+
+    /* 1 column on mobile */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Animated Webpage</title>
+    <link rel="stylesheet" href="style_8.css">
+    <link rel="stylesheet" href="style_9.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>PharmaCare</h1>
+        <p>Providing quality medicines for a healthier life.</p>
+    </header>
+
+    <nav class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#research">Research</a>
+        <a href="#quality">Quality</a>
+        <a href="#contact">Contact</a>
+        <span class="enquiry-badge">Enquiry list: <span id="enquiry-count" class="count">0</span></span>
+    </nav>
+
+    <main class="container">
+
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h2>Welcome to PharmaCare</h2>
+                <p>PharmaCare is a pharmaceutical company focused on developing and providing healthcare products.</p>
+                <button class="btn btn-pulse" id="explore-btn">Explore products</button>
+            </div>
+            <img src="pharmaceutical-company.jpg" alt="Pharmaceutical company">
+        </section>
+
+        <section id="products">
+            <h2 class="section-title">Our Product Categories</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <img src="medicine.jpg" alt="Tablets and capsules">
+                    <h3>Tablets and Capsules</h3>
+                    <p>Medicines in tablet and capsule forms.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-small toggle-details" aria-expanded="false">Show details</button>
+                        <button class="btn btn-small btn-accent add-enquiry" data-name="Tablets and Capsules">Add to enquiry</button>
+                    </div>
+                    <div class="details">
+                        <p>Available in pain relief, antibiotic and daily-care ranges. Every batch is tested before release.</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="vitamins.jpg" alt="Vitamins and supplements">
+                    <h3>Vitamins and Supplements</h3>
+                    <p>Products that support nutrition.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-small toggle-details" aria-expanded="false">Show details</button>
+                        <button class="btn btn-small btn-accent add-enquiry" data-name="Vitamins and Supplements">Add to enquiry</button>
+                    </div>
+                    <div class="details">
+                        <p>Includes multivitamins, vitamin D, calcium and iron supplements for all age groups.</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="healthcare-products.jpg" alt="Healthcare products">
+                    <h3>Healthcare Products</h3>
+                    <p>Products for general healthcare.</p>
+                    <div class="card-actions">
+                        <button class="btn btn-small toggle-details" aria-expanded="false">Show details</button>
+                        <button class="btn btn-small btn-accent add-enquiry" data-name="Healthcare Products">Add to enquiry</button>
+                    </div>
+                    <div class="details">
+                        <p>Thermometers, first-aid supplies, sanitizers and other everyday care items.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="research" class="split">
+            <div class="split-text">
+                <h2>Research and Development</h2>
+                <p>Our research team studies and develops pharmaceutical products to support better healthcare.</p>
+                <button class="btn" id="open-modal">Read more</button>
+            </div>
+            <img src="research-laboratory.jpg" alt="Scientists working in a pharmaceutical research laboratory">
+        </section>
+
+        <section id="quality">
+            <h2 class="section-title">Quality Standards</h2>
+            <div class="card-grid">
+                <div class="step">
+                    <h3>1. Raw Materials</h3>
+                    <p>Inspection of raw materials.</p>
+                </div>
+                <div class="step">
+                    <h3>2. Testing</h3>
+                    <p>Product quality testing.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Final Check</h3>
+                    <p>Final product inspection.</p>
+                </div>
+            </div>
+            <div class="quality-control">
+                <button class="btn" id="run-check">Run quality check</button>
+                <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@pharmacare.example</p>
+            <button class="btn btn-accent" id="send-enquiry">Send my enquiry</button>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="close-modal" aria-label="Close">&times;</button>
+            <h2 id="modal-title">Inside our research lab</h2>
+            <p>Our scientists test new formulas, study how medicines work in the body and check safety before any product reaches a pharmacy shelf.</p>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast-area" id="toast-area" aria-live="polite"></div>
+
+    <script src="script_9.js"></script>
+</body>
+</html>

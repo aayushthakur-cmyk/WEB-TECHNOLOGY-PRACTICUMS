@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Pharmaceutical Company</title>
+</head>
+<body>
+
+    <header>
+        <h1>PharmaCare</h1>
+        <p>Providing quality medicines for a healthier life.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#products">Products</a> |
+        <a href="#research">Research</a> |
+        <a href="#facilities">Facilities</a> |
+        <a href="#quality">Quality</a> |
+        <a href="#media">Media</a> |
+        <a href="#order-form">Order Form</a>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to PharmaCare</h2>
+        <p>PharmaCare is a pharmaceutical company focused on developing and providing healthcare products.</p>
+        <img src="pharmaceutical-company.jpg" alt="Pharmaceutical company" width="400">
+    </section>
+
+    <section id="products">
+        <h2>Our Product Categories</h2>
+        <ul>
+            <li>Tablets and capsules</li>
+            <li>Vitamins and supplements</li>
+            <li>Healthcare products</li>
+        </ul>
+
+        <h3>Product Information</h3>
+        <table border="1">
+            <tr>
+                <th>Product Category</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Tablets and capsules</td>
+                <td>Medicines in tablet and capsule forms</td>
+            </tr>
+            <tr>
+                <td>Vitamins and supplements</td>
+                <td>Products that support nutrition</td>
+            </tr>
+            <tr>
+                <td>Healthcare products</td>
+                <td>Products for general healthcare</td>
+            </tr>
+        </table>
+
+        <img src="medicine.jpg" alt="Pharmaceutical medicine products" width="300">
+    </section>
+
+    <section id="research">
+        <h2>Research and Development</h2>
+        <article>
+            <h3>Our Research Activities</h3>
+            <p>Our research team studies and develops pharmaceutical products to support better healthcare.</p>
+            <img src="research-laboratory.jpg" alt="Scientists working in a pharmaceutical research laboratory" width="400">
+        </article>
+    </section>
+
+    <section id="facilities">
+        <h2>Manufacturing Facilities</h2>
+        <p>Our manufacturing facilities are used for producing and packaging pharmaceutical products.</p>
+        <img src="manufacturing-facility.jpg" alt="Pharmaceutical manufacturing facility" width="400">
+    </section>
+
+    <section id="quality">
+        <h2>Quality Standards</h2>
+        <p>We check our products to help ensure quality, safety and consistency.</p>
+        <ol>
+            <li>Inspection of raw materials</li>
+            <li>Product quality testing</li>
+            <li>Final product inspection</li>
+        </ol>
+    </section>
+
+    <section id="media">
+        <h2>Company Audio</h2>
+        <audio controls>
+            <source src="company-audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h2>Company Video</h2>
+        <video width="400" controls>
+            <source src="company-video.mp4" type="video/mp4">
+            <track src="captions.vtt" kind="captions" srclang="en" label="English">
+            Your browser does not support the video element.
+        </video>
+
+        <h2>Healthcare Information</h2>
+        <iframe
+            width="400"
+            height="250"
+            src="https://www.youtube.com/embed/ysz5S6PUM-U"
+            title="Healthcare information video"
+            allowfullscreen>
+        </iframe>
+    </section>
+
+    <section id="order-form">
+        <h2>Product Order and Inquiry Form</h2>
+        <p>Fields marked with * are required.</p>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+
+            <!-- Text input -->
+            <p>
+                <label for="fullname">Full Name *</label><br>
+                <input type="text" id="fullname" name="fullname"
+                       placeholder="Enter your full name"
+                       required minlength="3" maxlength="50"
+                       pattern="[A-Za-z ]+"
+                       title="Use letters and spaces only (3 to 50 characters)">
+            </p>
+
+            <!-- Email -->
+            <p>
+                <label for="email">Email Address *</label><br>
+                <input type="email" id="email" name="email"
+                       placeholder="name@example.com" required>
+            </p>
+
+            <!-- Password -->
+            <p>
+                <label for="password">Password *</label><br>
+                <input type="password" id="password" name="password"
+                       required minlength="8"
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                       title="At least 8 characters with one uppercase letter, one lowercase letter and one number">
+            </p>
+
+            <!-- Number -->
+            <p>
+                <label for="quantity">Quantity Required *</label><br>
+                <input type="number" id="quantity" name="quantity"
+                       min="1" max="1000" step="1" value="1" required>
+            </p>
+
+            <!-- Date -->
+            <p>
+                <label for="delivery-date">Preferred Delivery Date *</label><br>
+                <input type="date" id="delivery-date" name="delivery_date"
+                       min="2026-11-06" required>
+            </p>
+
+            <!-- Radio buttons -->
+            <fieldset>
+                <legend>Customer Type *</legend>
+                <input type="radio" id="type-pharmacy" name="customer_type" value="pharmacy" required>
+                <label for="type-pharmacy">Pharmacy</label><br>
+                <input type="radio" id="type-hospital" name="customer_type" value="hospital">
+                <label for="type-hospital">Hospital</label><br>
+                <input type="radio" id="type-individual" name="customer_type" value="individual">
+                <label for="type-individual">Individual</label>
+            </fieldset>
+
+            <!-- Checkboxes -->
+            <fieldset>
+                <legend>Product Categories of Interest</legend>
+                <input type="checkbox" id="cat-tablets" name="categories" value="tablets-capsules">
+                <label for="cat-tablets">Tablets and capsules</label><br>
+                <input type="checkbox" id="cat-vitamins" name="categories" value="vitamins-supplements">
+                <label for="cat-vitamins">Vitamins and supplements</label><br>
+                <input type="checkbox" id="cat-healthcare" name="categories" value="healthcare-products">
+                <label for="cat-healthcare">Healthcare products</label>
+            </fieldset>
+
+            <!-- Select / drop-down -->
+            <p>
+                <label for="inquiry-type">Inquiry Type *</label><br>
+                <select id="inquiry-type" name="inquiry_type" required>
+                    <option value="">-- Select an option --</option>
+                    <option value="order">Place an order</option>
+                    <option value="price">Price information</option>
+                    <option value="bulk">Bulk supply</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+
+            <!-- Textarea -->
+            <p>
+                <label for="message">Message *</label><br>
+                <textarea id="message" name="message" rows="5" cols="40"
+                          placeholder="Write your message here"
+                          required minlength="10" maxlength="500"></textarea>
+            </p>
+
+            <!-- File input -->
+            <p>
+                <label for="document">Upload Supporting Document (PDF, JPG or PNG)</label><br>
+                <input type="file" id="document" name="document"
+                       accept=".pdf,.jpg,.jpeg,.png">
+            </p>
+
+            <!-- Required agreement checkbox -->
+            <p>
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">I confirm that the information provided is correct *</label>
+            </p>
+
+            <!-- Submit / Reset buttons -->
+            <p>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </p>
+
+        </form>
+    </section>
+
+    <footer>
+        <p>Contact: info@pharmacare.example</p>
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

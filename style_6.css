@@ -1,0 +1,212 @@
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #eef4f7;
+}
+
+/* ===== Header ===== */
+.site-header {
+    background-color: #0b6e75;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.site-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 40px;
+}
+
+.site-header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* ===== STICKY: navigation bar ===== */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    height: 54px;
+    background-color: #084c52;
+    padding: 6px 10px;
+}
+
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 5px;
+}
+
+.site-nav a:hover {
+    background-color: #f2a900;
+    color: #1a202c;
+}
+
+/* ===== Layout ===== */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #d5e2e8;
+    border-left: 6px solid #0b6e75;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #0b6e75;
+    border-bottom: 2px solid #e2edf1;
+    padding-bottom: 8px;
+}
+
+h3 {
+    margin: 0 0 6px 0;
+    color: #084c52;
+}
+
+/* ===== Demo boxes ===== */
+.box {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+/* 1. STATIC (default) */
+.box-static {
+    position: static;
+    background-color: #718096;
+}
+
+/* 2. RELATIVE: moved from its own normal position */
+.box-relative {
+    position: relative;
+    top: 30px;
+    left: 40px;
+    background-color: #f2a900;
+    color: #1a202c;
+    margin-bottom: 45px;
+}
+
+/* 3. ABSOLUTE: placed inside a relative parent */
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-card {
+    position: relative;          /* positioned parent for the badges */
+    width: 280px;
+    height: 170px;
+    padding: 45px 20px 20px 20px;
+    background-color: #f6fafb;
+    border: 1px solid #b8c9d1;
+    border-radius: 8px;
+}
+
+.badge {
+    position: absolute;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.badge-new {
+    top: 10px;
+    right: 10px;
+    background-color: #e53e3e;
+}
+
+.badge-stock {
+    bottom: 10px;
+    left: 10px;
+    background-color: #2f855a;
+}
+
+/* 4. FIXED: stays in the browser window */
+.helpline {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 200;
+    padding: 14px 24px;
+    background-color: #e53e3e;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.helpline:hover {
+    background-color: #9b2c2c;
+}
+
+/* 5. STICKY: table heading sticks below the sticky nav */
+.log-table,
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.log-table th,
+.summary-table th {
+    background-color: #0b6e75;
+    color: #ffffff;
+    text-align: left;
+    padding: 12px 15px;
+    border: 1px solid #cbd9df;
+}
+
+.log-table th {
+    position: sticky;
+    top: 54px;                   /* height of the sticky nav */
+}
+
+.log-table td,
+.summary-table td {
+    padding: 12px 15px;
+    border: 1px solid #cbd9df;
+}
+
+.log-table tr:hover td,
+.summary-table tr:hover td {
+    background-color: #fff3cc;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background-color: #084c52;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+.site-footer p {
+    margin: 4px 0;
+}

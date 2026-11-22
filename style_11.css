@@ -1,0 +1,106 @@
+/* =====================================================
+   PRACTICUM 11 - Form validation (loads after style_8.css)
+   ===================================================== */
+
+.form-card {
+    background-color: #ffffff;
+    border: 1px solid #d5e2e8;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 720px;
+    margin: 0 auto 30px auto;
+}
+.hint { margin: 0 0 18px 0; color: #4a5568; font-size: 14px; }
+
+fieldset {
+    border: 1px solid #d5e2e8;
+    border-radius: 8px;
+    padding: 18px 20px 6px 20px;
+    margin: 0 0 22px 0;
+}
+legend { padding: 0 8px; font-weight: 700; color: #084c52; }
+
+.row { display: flex; gap: 18px; }
+.row .field { flex: 1; }
+
+.field { display: flex; flex-direction: column; margin-bottom: 16px; }
+.field label { font-weight: 600; margin-bottom: 4px; color: #084c52; }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    padding: 10px 12px;
+    border: 2px solid #b7c9d1;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: #ffffff;
+}
+textarea { resize: vertical; }
+
+/* Focus */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0b6e75;
+    box-shadow: 0 0 0 3px rgba(11, 110, 117, 0.2);
+}
+
+/* Valid / invalid (invalid only after the field has been touched) */
+.touched:valid { border-color: #2f855a; background-color: #f2fbf6; }
+.touched:invalid { border-color: #b42318; background-color: #fff5f4; }
+
+/* Error messages */
+.error { display: none; margin-top: 4px; font-size: 14px; font-weight: 600; color: #b42318; }
+.error.show { display: block; }
+
+.counter { align-self: flex-end; font-size: 13px; color: #4a5568; margin-top: 2px; }
+
+/* Checkbox */
+.checkbox { display: grid; grid-template-columns: 22px 1fr; column-gap: 8px; align-items: center; }
+.checkbox input { width: 18px; height: 18px; }
+.checkbox label { margin: 0; }
+.checkbox .error { grid-column: 1 / -1; }
+
+/* Buttons */
+.button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+    padding: 11px 24px;
+    border: 1px solid #0b6e75;
+    border-radius: 5px;
+    background-color: #0b6e75;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn:hover { background-color: #084c52; }
+.btn:focus-visible { outline: 3px solid #f2a900; outline-offset: 2px; }
+.btn-ghost { background-color: #ffffff; color: #0b6e75; }
+.btn-ghost:hover { background-color: #e3f4f0; }
+
+/* Success message */
+.success {
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    border: 1px solid #2f855a;
+    border-left: 6px solid #2f855a;
+    border-radius: 6px;
+    background-color: #e6f6ec;
+    color: #1c4532;
+    font-weight: 600;
+}
+.success[hidden] { display: none; }
+
+.contact { margin-bottom: 0; }
+
+@media (max-width: 576px) {
+    .form-card { padding: 20px; }
+    .row { flex-direction: column; gap: 0; }
+}

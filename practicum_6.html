@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - CSS Positioning Demo</title>
+    <link rel="stylesheet" href="style_6.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>PharmaCare</h1>
+        <p>CSS Positioning Techniques in a Pharmaceutical Company Webpage</p>
+    </header>
+
+    <!-- STICKY: navigation bar sticks to the top while scrolling -->
+    <nav class="site-nav">
+        <a href="#static">Static</a>
+        <a href="#relative">Relative</a>
+        <a href="#absolute">Absolute</a>
+        <a href="#fixed">Fixed</a>
+        <a href="#sticky">Sticky</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- 1. STATIC -->
+        <section id="static" class="card">
+            <h2>1. position: static</h2>
+            <p>Default positioning. Elements follow the normal document flow, and top, left, right and bottom have no effect. Example: the department boxes below stack in order.</p>
+            <div class="box box-static">Research Department</div>
+            <div class="box box-static">Manufacturing Department</div>
+            <div class="box box-static">Quality Control Department</div>
+        </section>
+
+        <!-- 2. RELATIVE -->
+        <section id="relative" class="card">
+            <h2>2. position: relative</h2>
+            <p>The element is moved relative to its own normal position, and its original space is still kept. Example: the middle box is shifted from where it would normally be.</p>
+            <div class="box box-static">Tablets Line</div>
+            <div class="box box-relative">Capsules Line (shifted 30px down and 40px right)</div>
+            <div class="box box-static">Syrups Line</div>
+        </section>
+
+        <!-- 3. ABSOLUTE -->
+        <section id="absolute" class="card">
+            <h2>3. position: absolute</h2>
+            <p>The element is removed from the normal flow and placed relative to its nearest positioned parent. Example: the labels sit on the corners of each product card.</p>
+            <div class="product-row">
+                <div class="product-card">
+                    <span class="badge badge-new">NEW</span>
+                    <h3>Vitamin C Tablets</h3>
+                    <p>Supports daily nutrition.</p>
+                    <span class="badge badge-stock">In Stock</span>
+                </div>
+                <div class="product-card">
+                    <span class="badge badge-new">NEW</span>
+                    <h3>Pain Relief Capsules</h3>
+                    <p>Medicine in capsule form.</p>
+                    <span class="badge badge-stock">In Stock</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FIXED -->
+        <section id="fixed" class="card">
+            <h2>4. position: fixed</h2>
+            <p>The element is placed relative to the browser window and stays in the same place while the page scrolls. Example: the "Helpline" button at the bottom-right corner of the screen always stays visible.</p>
+            <p>Scroll the page up and down to see that the button does not move.</p>
+        </section>
+
+        <!-- 5. STICKY -->
+        <section id="sticky" class="card">
+            <h2>5. position: sticky</h2>
+            <p>The element scrolls normally until it reaches a set position, then sticks there. Example: the table heading below stays visible while the batch records scroll past it.</p>
+
+            <table class="log-table">
+                <thead>
+                    <tr>
+                        <th>Batch No.</th>
+                        <th>Product</th>
+                        <th>Inspection Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>B-1001</td><td>Tablets</td><td>Passed</td></tr>
+                    <tr><td>B-1002</td><td>Capsules</td><td>Passed</td></tr>
+                    <tr><td>B-1003</td><td>Vitamins</td><td>Passed</td></tr>
+                    <tr><td>B-1004</td><td>Syrups</td><td>Passed</td></tr>
+                    <tr><td>B-1005</td><td>Tablets</td><td>Passed</td></tr>
+                    <tr><td>B-1006</td><td>Capsules</td><td>Passed</td></tr>
+                    <tr><td>B-1007</td><td>Vitamins</td><td>Passed</td></tr>
+                    <tr><td>B-1008</td><td>Syrups</td><td>Passed</td></tr>
+                    <tr><td>B-1009</td><td>Tablets</td><td>Passed</td></tr>
+                    <tr><td>B-1010</td><td>Capsules</td><td>Passed</td></tr>
+                    <tr><td>B-1011</td><td>Vitamins</td><td>Passed</td></tr>
+                    <tr><td>B-1012</td><td>Syrups</td><td>Passed</td></tr>
+                    <tr><td>B-1013</td><td>Tablets</td><td>Passed</td></tr>
+                    <tr><td>B-1014</td><td>Capsules</td><td>Passed</td></tr>
+                    <tr><td>B-1015</td><td>Vitamins</td><td>Passed</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Summary -->
+        <section class="card">
+            <h2>Summary</h2>
+            <table class="summary-table">
+                <tr>
+                    <th>Value</th>
+                    <th>Behavior</th>
+                    <th>Used for</th>
+                </tr>
+                <tr>
+                    <td>static</td>
+                    <td>Normal document flow</td>
+                    <td>Department boxes</td>
+                </tr>
+                <tr>
+                    <td>relative</td>
+                    <td>Offset from its own position</td>
+                    <td>Production line box</td>
+                </tr>
+                <tr>
+                    <td>absolute</td>
+                    <td>Placed inside a positioned parent</td>
+                    <td>Product card labels</td>
+                </tr>
+                <tr>
+                    <td>fixed</td>
+                    <td>Fixed to the browser window</td>
+                    <td>Helpline button</td>
+                </tr>
+                <tr>
+                    <td>sticky</td>
+                    <td>Scrolls, then sticks</td>
+                    <td>Navigation bar and table heading</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- FIXED: always visible in the bottom-right corner -->
+    <a href="tel:+000000000" class="helpline">Helpline</a>
+
+    <footer class="site-footer">
+        <p>Contact: info@pharmacare.example</p>
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

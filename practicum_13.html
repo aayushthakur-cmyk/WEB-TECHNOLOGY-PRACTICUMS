@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Task Manager</title>
+    <link rel="stylesheet" href="style_13.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>PharmaCare</h1>
+        <p>Pharmacy task manager: keep every job on track.</p>
+    </header>
+
+    <nav class="site-nav">
+        <a href="#form-section">Add task</a>
+        <a href="#task-section">Tasks</a>
+        <a href="#overview">Overview</a>
+    </nav>
+
+    <main class="container">
+
+        <div class="layout">
+
+            <section id="form-section" class="panel">
+                <h2 id="form-title">Add a task</h2>
+
+                <form id="task-form" novalidate>
+                    <div class="field">
+                        <label for="title">Task title *</label>
+                        <input type="text" id="title" maxlength="60" placeholder="e.g. Check expiry dates on shelf B">
+                    </div>
+
+                    <div class="field">
+                        <label for="description">Details</label>
+                        <textarea id="description" rows="3" maxlength="200" placeholder="Short notes about the task"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label for="department">Department</label>
+                            <select id="department">
+                                <option value="Dispensing">Dispensing</option>
+                                <option value="Inventory">Inventory</option>
+                                <option value="Quality Control">Quality Control</option>
+                                <option value="Customer Care">Customer Care</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="priority">Priority</label>
+                            <select id="priority">
+                                <option value="High">High</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label for="due">Due date *</label>
+                            <input type="date" id="due">
+                        </div>
+                        <div class="field">
+                            <label for="status">Status</label>
+                            <select id="status">
+                                <option value="To Do">To Do</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Done">Done</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <p id="form-message" class="message"></p>
+
+                    <div class="button-row">
+                        <button type="submit" class="btn" id="save-btn">Add task</button>
+                        <button type="button" class="btn btn-ghost" id="cancel-btn">Cancel edit</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="task-section" class="panel">
+                <h2>Task list</h2>
+
+                <div class="filters" id="filters">
+                    <button class="btn btn-ghost active" data-filter="All">All</button>
+                    <button class="btn btn-ghost" data-filter="To Do">To Do</button>
+                    <button class="btn btn-ghost" data-filter="In Progress">In Progress</button>
+                    <button class="btn btn-ghost" data-filter="Done">Done</button>
+                </div>
+
+                <ul id="task-list" class="task-list"></ul>
+
+                <button class="btn btn-danger" id="clear-done">Delete all completed</button>
+            </section>
+
+        </div>
+
+        <section id="overview" class="panel">
+            <h2>Overview by department</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Department</th>
+                            <th>To Do</th>
+                            <th>In Progress</th>
+                            <th>Done</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="overview-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+    <script src="script_13.js"></script>
+</body>
+</html>

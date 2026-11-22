@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Medicine Enquiry Form</title>
+    <link rel="stylesheet" href="style_8.css">
+    <link rel="stylesheet" href="style_11.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>PharmaCare</h1>
+        <p>Providing quality medicines for a healthier life.</p>
+    </header>
+
+    <nav class="site-nav">
+        <a href="#enquiry">Enquiry form</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+
+        <section id="enquiry" class="form-card">
+            <h2>Medicine enquiry form</h2>
+            <p class="hint">Fields marked with * are required.</p>
+
+            <div id="success-message" class="success" role="status" hidden></div>
+
+            <form id="enquiry-form" novalidate>
+
+                <fieldset>
+                    <legend>Patient details</legend>
+
+                    <div class="field">
+                        <label for="fullname">Full name *</label>
+                        <input type="text" id="fullname" name="fullname" required minlength="3" maxlength="50"
+                               pattern="[A-Za-z ]+" placeholder="e.g. Anita Kumar">
+                        <span class="error" id="fullname-error"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email address *</label>
+                        <input type="email" id="email" name="email" required placeholder="name@example.com">
+                        <span class="error" id="email-error"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label for="phone">Mobile number *</label>
+                            <input type="tel" id="phone" name="phone" required pattern="[6-9][0-9]{9}"
+                                   maxlength="10" placeholder="10-digit number">
+                            <span class="error" id="phone-error"></span>
+                        </div>
+                        <div class="field">
+                            <label for="age">Age *</label>
+                            <input type="number" id="age" name="age" required min="1" max="120" placeholder="e.g. 35">
+                            <span class="error" id="age-error"></span>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Medicine request</legend>
+
+                    <div class="field">
+                        <label for="category">Product category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="tablets">Tablets and Capsules</option>
+                            <option value="vitamins">Vitamins and Supplements</option>
+                            <option value="healthcare">Healthcare Products</option>
+                        </select>
+                        <span class="error" id="category-error"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="medicine">Medicine name *</label>
+                        <input type="text" id="medicine" name="medicine" required minlength="2" maxlength="60"
+                               placeholder="e.g. Vitamin D3">
+                        <span class="error" id="medicine-error"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label for="quantity">Quantity (1 to 50) *</label>
+                            <input type="number" id="quantity" name="quantity" required min="1" max="50" placeholder="e.g. 2">
+                            <span class="error" id="quantity-error"></span>
+                        </div>
+                        <div class="field">
+                            <label for="delivery">Preferred delivery date *</label>
+                            <input type="date" id="delivery" name="delivery" required>
+                            <span class="error" id="delivery-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="notes">Additional notes</label>
+                        <textarea id="notes" name="notes" rows="4" maxlength="200"
+                                  placeholder="Dosage form, brand preference, or any questions"></textarea>
+                        <span class="counter"><span id="notes-count">0</span> / 200</span>
+                        <span class="error" id="notes-error"></span>
+                    </div>
+                </fieldset>
+
+                <div class="field checkbox">
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent">I confirm the details above are correct. *</label>
+                    <span class="error" id="consent-error"></span>
+                </div>
+
+                <div class="button-row">
+                    <button type="submit" class="btn">Send enquiry</button>
+                    <button type="reset" class="btn btn-ghost" id="reset-btn">Clear form</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@pharmacare.example</p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 PharmaCare. All rights reserved.</p>
+    </footer>
+
+    <script src="script_11.js"></script>
+</body>
+</html>

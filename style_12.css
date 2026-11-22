@@ -1,0 +1,59 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #2d3748; background-color: #eef4f7; }
+
+.site-header { background-color: #0b6e75; color: #ffffff; text-align: center; padding: 40px 20px; }
+.site-header h1 { margin: 0 0 6px 0; font-size: 40px; }
+.site-header p { margin: 0; font-size: 18px; }
+.site-nav { display: flex; justify-content: center; gap: 10px; background-color: #084c52; padding: 10px; }
+.site-nav a { color: #ffffff; text-decoration: none; font-weight: 600; padding: 8px 20px; border-radius: 5px; }
+.site-nav a:hover { background-color: #f2a900; color: #1a202c; }
+.container { width: 94%; max-width: 1150px; margin: 30px auto; }
+h2 { margin: 0 0 6px 0; font-size: 28px; color: #0b6e75; }
+.site-footer { background-color: #084c52; color: #ffffff; text-align: center; padding: 18px; }
+.site-footer p { margin: 0; }
+
+.panel { background-color: #ffffff; border: 1px solid #d5e2e8; border-radius: 8px; padding: 25px; margin-bottom: 25px; }
+.hint { margin: 0 0 15px 0; color: #4a5568; font-size: 14px; }
+
+/* Buttons */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.btn { padding: 10px 20px; border: 1px solid #0b6e75; border-radius: 5px; background-color: #0b6e75; color: #ffffff; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn:hover { background-color: #084c52; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-ghost { background-color: #ffffff; color: #0b6e75; }
+.btn-ghost:hover { background-color: #e3f4f0; }
+.btn-ghost.active { background-color: #0b6e75; color: #ffffff; }
+.btn-warn { background-color: #f2a900; border-color: #f2a900; color: #1a202c; }
+.btn-warn:hover { background-color: #d99700; }
+.btn:focus-visible { outline: 3px solid #f2a900; outline-offset: 2px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+
+/* Summary grid */
+.summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px; }
+.stat { display: flex; flex-direction: column; align-items: center; background-color: #ffffff; border: 1px solid #d5e2e8; border-top: 5px solid #0b6e75; border-radius: 8px; padding: 14px; }
+.stat span:first-child { font-size: 14px; color: #4a5568; }
+.stat-value { font-size: 30px; font-weight: 700; color: #0b6e75; }
+
+/* Status messages */
+.status { display: none; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 6px; margin-bottom: 18px; font-weight: 600; }
+.status.show { display: flex; }
+.status.loading { background-color: #e3f4f0; border: 1px solid #0b6e75; color: #084c52; }
+.status.error { background-color: #fde4e1; border: 1px solid #b42318; border-left: 6px solid #b42318; color: #8a1a11; }
+.status.ok { background-color: #e6f6ec; border: 1px solid #2f855a; color: #1c4532; }
+.spinner { width: 22px; height: 22px; border: 3px solid #b7d9dc; border-top-color: #0b6e75; border-radius: 50%; animation: spin 0.8s linear infinite; flex-shrink: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Table */
+.table-wrap { overflow-x: auto; border: 1px solid #d5e2e8; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; min-width: 820px; background-color: #ffffff; }
+th, td { padding: 11px 14px; border-bottom: 1px solid #e2ebef; text-align: left; vertical-align: top; font-size: 15px; }
+thead th { background-color: #0b6e75; color: #ffffff; position: sticky; top: 0; }
+tbody tr:hover { background-color: #f2f8fa; }
+.tag { display: inline-block; padding: 1px 10px; border-radius: 10px; font-size: 13px; font-weight: 700; }
+.class-I { background-color: #fde4e1; color: #b42318; }
+.class-II { background-color: #fff1cc; color: #8a5a00; }
+.class-III { background-color: #e3f4f0; color: #0b6e75; }
+.empty { text-align: center; color: #4a5568; padding: 25px; }
+
+@media (max-width: 992px) { .summary { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .summary { grid-template-columns: 1fr; } .site-header h1 { font-size: 30px; } .site-nav { flex-direction: column; } }
